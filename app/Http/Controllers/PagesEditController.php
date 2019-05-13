@@ -11,7 +11,7 @@ class PagesEditController extends Controller
 {
     public function execute(Page $page, Request $request)
     {
-        if ($request->isMethod('post') && $request->get('action') === 'delete') {
+        if ($request->isMethod('delete')) {
             $page->delete();
             return redirect()->route('pages')->with('status', 'Страница удалена');
         }
